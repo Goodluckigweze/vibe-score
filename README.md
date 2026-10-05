@@ -26,7 +26,7 @@ The total is capped at 100. Explorer indexing and public RPC availability affect
 - The app targets Robinhood Chain Testnet, chain ID `46630`.
 - Scoring reads public chain and explorer data. It does not submit transactions or ask the user to sign a message for a score.
 
-Wallet approvals and mobile WalletConnect pairing have not yet been verified end to end. Treat those flows as needing manual confirmation before relying on them.
+The project owner has verified wallet connection approval and WalletConnect pairing on both desktop and mobile, end to end, on Robinhood Chain Testnet.
 
 ## Getting started
 
