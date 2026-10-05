@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Vibe Score"
+description = "A wallet-connected Vibe Score app for Robinhood Chain Testnet, with token-holder gating, on-chain activity signals, and a unique wallet signature."
+version = "1.0.0"
+id = "artifacts/vibe-score"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25302
+
+[services.development]
+run = "pnpm --filter @workspace/vibe-score run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/vibe-score", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/vibe-score/out"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25302"
+BASE_PATH = "/"
